@@ -42,7 +42,7 @@ function Workflow() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-gray-100 p-8 w-full min-h-screen font-[Poppins] text-center mt-10">
+    <div className="bg-white p-8 w-full min-h-screen font-[Poppins] text-center mt-10">
       <h1 className="text-3xl md:text-4xl font-bold text-black mb-2">Track Your Work</h1>
       <p className="text-gray-600 text-lg max-w-xl mx-auto">
         Stay updated with your progress step by step. Monitor the status of your task in real-time.

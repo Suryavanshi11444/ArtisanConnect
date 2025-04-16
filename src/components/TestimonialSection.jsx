@@ -172,7 +172,7 @@ const TestimonialCard = ({
 
 const TestimonialSection = () => {
   return (
-    <section className="bg-gradient-to-br from-white to-gray-100 py-20 px-4 sm:px-8 lg:px-16">
+    <section className="bg-gradient-to-br from-blue-50 to-cyan-50 py-20 px-4 sm:px-8 lg:px-16">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
           What Our Clients Say

@@ -74,7 +74,7 @@ const AboutSection = () => {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-cyan-900/80 z-10"></div>
           <img 
-            src="https://images.unsplash.com/photo-1560272566-c9feec8d1429?auto=format&fit=crop&w=1470&q=80" 
+            src="https://i.pinimg.com/originals/d4/e6/a5/d4e6a51bf4a291fcea3ffe0b180205f0.jpg" 
             alt="Turtle conservation"
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
@@ -148,7 +148,7 @@ const AboutSection = () => {
           className="relative rounded-xl overflow-hidden col-span-3 row-span-1 group shadow-lg"
         >
           <img 
-            src="https://images.unsplash.com/photo-1578474846511-04ba529f0d01?auto=format&fit=crop&w=1470&q=80"
+            src="https://i.etsystatic.com/20250217/r/il/90159d/3967148943/il_570xN.3967148943_3b9h.jpg"
             alt="Cultural craft"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
