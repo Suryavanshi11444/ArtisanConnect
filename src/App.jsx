@@ -1,9 +1,17 @@
 import React from 'react'
 import './index.css'
+import Navbar from './components/Navbar'
+import AboutSection from './components/About'
+import HeroSection from './components/hero'
+
 
 function App() {
   return (
-    <div>App</div>
+    <>
+    <Navbar/>
+    <HeroSection/>
+    <AboutSection/>
+    </>
   )
 }
 
