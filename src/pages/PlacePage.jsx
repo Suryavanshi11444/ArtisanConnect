@@ -1,10 +1,10 @@
 import React from 'react'
-import Hidden from '../components/Hidden';
+import  FoundedPlaces from '../components/Hidden';
 
 function PlacePage() {
   return (
     <>
-    <Hidden />
+    < FoundedPlaces />
     </>
   )
 }

@@ -9,11 +9,14 @@ function Workflow() {
   const steps = ["Booking Feature", "Work Started", "Approximate Done", "Completed"];
 
   const stepImages = [
-    "https://source.unsplash.com/800x400/?booking,technology",
-    "https://source.unsplash.com/800x400/?wifi,troubleshooting",
-    "https://source.unsplash.com/800x400/?progress,technology",
-    "https://source.unsplash.com/800x400/?success,connected",
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // forest
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // artisan hands
+    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80", // sunset mountains
+     // handmade art
   ];
+  
+  
 
   const stepDescriptions = [
     "You have successfully booked a WiFi service. Our team will get in touch with you shortly to assist further.",
@@ -126,21 +129,21 @@ function Workflow() {
           onClick={handleNext}
           sx={{
             fontFamily: "Poppins",
-            backgroundColor: "#fcb800",
-            color: "black",
+            backgroundColor: "rgba(30, 58, 138, 0.9)", // Tailwind's bg-blue-900/90
+            color: "white",
             px: 3,
             py: 1,
             borderRadius: "8px",
-            border: "2px solid #fcb800",
+            border: "2px solid rgba(30, 58, 138, 0.9)",
             textTransform: "none",
             "&:hover": {
               backgroundColor: "white",
-              color: "#fcb800",
-              border: "2px solid #fcb800",
+              color: "rgba(30, 58, 138, 0.9)",
+              border: "2px solid rgba(30, 58, 138, 0.9)",
             },
             "&:disabled": {
-              backgroundColor: "#fcb800",
-              color: "black",
+              backgroundColor: "rgba(30, 58, 138, 0.5)",
+              color: "white",
               opacity: 0.5,
             },
           }}
