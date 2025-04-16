@@ -3,50 +3,54 @@ import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full min-h-screen overflow-hidden">
       {/* Background Image with Gradient Overlay */}
       <div className="absolute inset-0">
         <img
           src="https://i.pinimg.com/originals/33/af/b6/33afb6502f3609abfb0f0845b48ff23e.jpg"
           alt="Sea turtle swimming"
           className="w-full h-full object-cover"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-cyan-800/70"></div>
       </div>
 
       {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-6 md:px-12 lg:px-24 max-w-7xl mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 max-w-7xl mx-auto py-24">
         {/* Main Content */}
         <div className="flex flex-col lg:flex-row items-center">
           {/* Text Content */}
-          <div className="lg:w-1/2 mb-12 lg:mb-0">
+          <div className="lg:w-1/2 mb-8 lg:mb-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-1 bg-amber-400 mr-4"></div>
-                <span className="text-amber-300 font-medium tracking-wider">ARTISAN CONNECT</span>
+              <div className="flex items-center mb-4 sm:mb-6">
+                <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-amber-400 mr-3 sm:mr-4"></div>
+                <span className="text-amber-300 text-sm sm:text-base font-medium tracking-wider">
+                  ARTISAN CONNECT
+                </span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                Protect Marine Life Through <span className="text-amber-300">Sustainable Tourism</span>
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                Protect Marine Life Through{' '}
+                <span className="text-amber-300">Sustainable Tourism</span>
               </h1>
-              <p className="text-lg text-blue-100 mb-8 max-w-lg">
+              <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 max-w-lg">
                 Join our community of responsible travelers and help conserve sea turtles while experiencing authentic local cultures and artisan traditions.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3 sm:gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-colors"
+                  className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg transition-colors text-sm sm:text-base"
                 >
                   Explore Tours
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full shadow-lg transition-colors"
+                  className="bg-transparent border border-white text-white hover:bg-white/10 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg transition-colors text-sm sm:text-base"
                 >
                   Learn More
                 </motion.button>
@@ -54,8 +58,8 @@ const HeroSection = () => {
             </motion.div>
           </div>
 
-          {/* Feature Blocks */}
-          <div className="lg:w-1/2 grid grid-cols-2 gap-6 mt-12 lg:mt-0 lg:ml-12">
+          {/* Feature Blocks - 2x2 grid on md+, single column on smaller screens */}
+          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-12 lg:mt-0 lg:ml-8 xl:ml-12">
             {[
               {
                 icon: '🐢',
@@ -75,7 +79,7 @@ const HeroSection = () => {
               {
                 icon: '🌎',
                 title: 'Global Impact',
-                
+               
               }
             ].map((feature, index) => (
               <motion.div
@@ -84,46 +88,57 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
                 whileHover={{ y: -5 }}
-                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 shadow-lg"
+                className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-white/20 shadow-lg"
               >
-                <div className="text-3xl mb-3">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                <p className="text-blue-100">{feature.desc}</p>
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{feature.icon}</div>
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-blue-100 text-sm sm:text-base">
+                  {feature.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Video in Bottom Right */}
+        {/* Responsive Video - Now properly contained */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="absolute right-6 bottom-6 w-64 h-48 md:w-80 md:h-56 rounded-xl overflow-hidden shadow-2xl border-2 border-white/20"
+          className="absolute right-4 bottom-4 w-64 h-48 max-w-[12rem] sm:max-w-[20rem] md:max-w-[24rem] lg:max-w-[28rem] xl:max-w-[32rem] aspect-video"
         >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-          >
-            <source src="/Art.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-            <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+          <div className="relative w-full h-full rounded-lg sm:rounded-xl overflow-hidden shadow-xl sm:shadow-2xl border border-white/20 sm:border-2">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/Art.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                <svg 
+                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
             </div>
           </div>
         </motion.div>
       </div>
 
-      {/* Water Wave Decoration */}
+      {/* Responsive Water Wave Decoration */}
       <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-24">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 sm:h-20 md:h-24">
           <path 
             d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
             opacity=".25" 

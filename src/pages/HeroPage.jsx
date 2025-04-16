@@ -10,13 +10,13 @@ import Faq12 from '../components/sections/FAQ';
 function HeroPage() {
   return (
     <>
-    <Navbar />
+   
     <HeroSection />
     <AboutSection />
     <Workflow />
     <TestimonialSection />
     <Faq12 />
-    <Footer />
+    
     </>
   )
 }

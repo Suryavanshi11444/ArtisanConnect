@@ -6,23 +6,27 @@ function Workflow() {
   const [activeStep, setActiveStep] = useState(0);
   const [direction, setDirection] = useState(-1);
 
-  const steps = ["Booking Feature", "Work Started", "Approximate Done", "Completed"];
+  const steps = ["Booking Confirmed", "Work Started", "Progress Update", "Completed"];
+  
+  const stepIcons = [
+    "📅", // Calendar for booking
+    "🛠️",  // Tools for work started
+    "⏳",  // Hourglass for progress
+    "✅"   // Checkmark for completed
+  ];
 
   const stepImages = [
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // forest
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80", // artisan hands
-    "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80", // sunset mountains
-     // handmade art
+    "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Hands working
+    "https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Artisan tools
+    "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", // Team working
+    "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" // Handshake
   ];
-  
-  
 
   const stepDescriptions = [
-    "You have successfully booked a WiFi service. Our team will get in touch with you shortly to assist further.",
-    "The troubleshooting process has started. Our system is diagnosing the potential issues with your WiFi.",
-    "The issue has been 75% resolved. Some final optimizations are being made to ensure smooth connectivity.",
-    "Your WiFi is now fully operational! Enjoy seamless internet without any interruptions.",
+    "Your booking with our artisan is confirmed! We've sent you the details via email.",
+    "Our skilled artisan has begun working on your project with care and precision.",
+    "Your project is 75% complete. We're adding the finishing artisan touches.",
+    "Your project is complete! We hope you love the handcrafted results."
   ];
 
   const handleNext = () => {
@@ -45,112 +49,146 @@ function Workflow() {
   };
 
   return (
-    <div className="bg-white p-8 w-full min-h-screen font-[Poppins] text-center mt-10">
-      <h1 className="text-3xl md:text-4xl font-bold text-black mb-2">Track Your Work</h1>
-      <p className="text-gray-600 text-lg max-w-xl mx-auto">
-        Stay updated with your progress step by step. Monitor the status of your task in real-time.
-      </p>
+    <div className="bg-white p-8 w-full min-h-screen font-[Poppins] text-center">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-6xl mx-auto"
+      >
+        <h1 className="text-3xl md:text-4xl font-bold text-blue-900 mb-2">Artisan Workflow Tracker</h1>
+        <p className="text-blue-800 text-lg max-w-xl mx-auto">
+          Follow your artisan's journey as they create your masterpiece
+        </p>
 
-      <div className="w-full mt-8">
-        <Stepper activeStep={activeStep} alternativeLabel>
-          {steps.map((label, index) => (
-            <Step key={index} onClick={() => handleStepClick(index)} className="cursor-pointer">
-              <StepLabel
-                sx={{
-                  "& .MuiStepIcon-root": {
-                    color: activeStep >= index ? "#000000" : "#fcb800",
-                  },
-                  "& .MuiStepConnector-line": {
-                    borderColor: activeStep >= index ? "#000000" : "#fcb800",
-                  },
-                  "& .MuiStepIcon-text": {
-                    fill: "#ffffff",
-                  },
-                  "& .MuiTypography-root": {
-                    fontFamily: "Poppins",
-                    fontWeight: "bold",
-                    color: activeStep >= index ? "#000000" : "#fcb800",
-                  },
-                }}
-              >
-                {label}
-              </StepLabel>
-            </Step>
-          ))}
-        </Stepper>
-      </div>
+        <div className="w-full mt-12 px-4">
+          <Stepper activeStep={activeStep} alternativeLabel>
+            {steps.map((label, index) => (
+              <Step key={index} onClick={() => handleStepClick(index)} className="cursor-pointer">
+                <StepLabel
+                  sx={{
+                    "& .MuiStepIcon-root": {
+                      color: activeStep >= index ? "#FCB800" : "#E5E7EB",
+                      "&.Mui-completed": {
+                        color: "#FCB800",
+                      },
+                      "&.Mui-active": {
+                        color: "#FCB800",
+                      },
+                    },
+                    "& .MuiStepConnector-line": {
+                      borderColor: activeStep >= index ? "#FCB800" : "#E5E7EB",
+                      borderTopWidth: 3,
+                    },
+                    "& .MuiStepIcon-text": {
+                      fill: "#1E3A8A",
+                      fontWeight: "bold",
+                    },
+                    "& .MuiTypography-root": {
+                      fontFamily: "Poppins",
+                      fontWeight: "bold",
+                      color: activeStep >= index ? "#1E3A8A" : "#6B7280",
+                    },
+                  }}
+                >
+                  <div className="flex flex-col items-center">
+                    <span className="text-2xl mb-1">{stepIcons[index]}</span>
+                    {label}
+                  </div>
+                </StepLabel>
+              </Step>
+            ))}
+          </Stepper>
+        </div>
 
-      <div className="relative overflow-hidden w-full max-w-lg mx-auto mt-10 bg-white shadow-lg rounded-2xl p-4">
-        <motion.img
-          key={activeStep}
-          src={stepImages[activeStep]}
-          alt={`Step ${activeStep + 1}`}
-          initial={{ x: direction * 300, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: -direction * 300, opacity: 0 }}
-          transition={{ duration: 0.5 }}
-          className="w-full max-h-52 object-cover rounded-md"
-        />
-      </div>
-
-      <h2 className="text-2xl font-semibold text-black mt-6">{steps[activeStep]}</h2>
-      <p className="text-gray-600 text-lg max-w-lg mx-auto mt-2">{stepDescriptions[activeStep]}</p>
-
-      <div className="flex justify-between items-center gap-4 mt-8 max-w-lg mx-auto">
-        <Button
-          disabled={activeStep === 0}
-          onClick={handleBack}
-          sx={{
-            fontFamily: "Poppins",
-            backgroundColor: "black",
-            color: "white",
-            px: 3,
-            py: 1,
-            borderRadius: "8px",
-            border: "2px solid black",
-            textTransform: "none",
-            "&:hover": {
-              backgroundColor: "white",
-              color: "black",
-              border: "2px solid black",
-            },
-            "&:disabled": {
-              backgroundColor: "black",
-              color: "white",
-              opacity: 0.5,
-            },
-          }}
+        <motion.div 
+          className="relative overflow-hidden w-full max-w-2xl mx-auto mt-12 bg-white shadow-xl rounded-2xl p-6 border border-blue-100"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300 }}
         >
-          Previous
-        </Button>
+          <motion.div
+            key={activeStep}
+            initial={{ x: direction * 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: -direction * 300, opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <img
+              src={stepImages[activeStep]}
+              alt={`Step ${activeStep + 1}`}
+              className="w-full h-64 object-cover rounded-lg"
+            />
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-blue-900/90 to-transparent p-4 text-left rounded-b-lg">
+              <h2 className="text-2xl font-bold text-white">{steps[activeStep]}</h2>
+              <p className="text-blue-100">{stepDescriptions[activeStep]}</p>
+            </div>
+          </motion.div>
+        </motion.div>
 
-        <Button
-          disabled={activeStep === steps.length - 1}
-          onClick={handleNext}
-          sx={{
-            fontFamily: "Poppins",
-            backgroundColor: "rgba(30, 58, 138, 0.9)", // Tailwind's bg-blue-900/90
-            color: "white",
-            px: 3,
-            py: 1,
-            borderRadius: "8px",
-            border: "2px solid rgba(30, 58, 138, 0.9)",
-            textTransform: "none",
-            "&:hover": {
-              backgroundColor: "white",
-              color: "rgba(30, 58, 138, 0.9)",
-              border: "2px solid rgba(30, 58, 138, 0.9)",
-            },
-            "&:disabled": {
-              backgroundColor: "rgba(30, 58, 138, 0.5)",
-              color: "white",
-              opacity: 0.5,
-            },
-          }}
-        >
-          Move Forward
-        </Button>
-      </div>
+        <div className="flex justify-center items-center gap-6 mt-12 max-w-lg mx-auto">
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              disabled={activeStep === 0}
+              onClick={handleBack}
+              sx={{
+                fontFamily: "Poppins",
+                backgroundColor: "#1E3A8A",
+                color: "white",
+                px: 4,
+                py: 1.5,
+                borderRadius: "12px",
+                border: "2px solid #1E3A8A",
+                textTransform: "none",
+                fontSize: "1rem",
+                fontWeight: "600",
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "#1E3A8A",
+                },
+                "&:disabled": {
+                  backgroundColor: "#E5E7EB",
+                  color: "#9CA3AF",
+                  border: "none"
+                },
+              }}
+            >
+              Previous Step
+            </Button>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button
+              disabled={activeStep === steps.length - 1}
+              onClick={handleNext}
+              sx={{
+                fontFamily: "Poppins",
+                backgroundColor: "#FCB800",
+                color: "#1E3A8A",
+                px: 4,
+                py: 1.5,
+                borderRadius: "12px",
+                border: "2px solid #FCB800",
+                textTransform: "none",
+                fontSize: "1rem",
+                fontWeight: "600",
+                "&:hover": {
+                  backgroundColor: "white",
+                  color: "#FCB800",
+                  border: "2px solid #FCB800",
+                },
+                "&:disabled": {
+                  backgroundColor: "#E5E7EB",
+                  color: "#9CA3AF",
+                  border: "none"
+                },
+              }}
+            >
+              Next Step
+            </Button>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 }
