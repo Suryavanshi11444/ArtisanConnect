@@ -1,9 +1,14 @@
 import React from 'react'
 import './index.css'
+import HeroPage from './pages/HeroPage';
+
 
 function App() {
   return (
-    <div>App</div>
+    <>
+      <HeroPage />
+      
+    </>
   )
 }
 
