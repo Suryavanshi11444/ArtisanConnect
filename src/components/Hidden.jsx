@@ -21,7 +21,7 @@ const FoundedPlaces = () => {
     let angle = 0;
 
     const animateCarousel = () => {
-      angle += 0.05;
+      angle += 0.02;
 
       items.forEach((item, index) => {
         const itemAngle = angle + (index * (2 * Math.PI / count));
@@ -29,7 +29,7 @@ const FoundedPlaces = () => {
         const z = Math.sin(itemAngle) * radius;
 
         item.style.transform = `translateX(${x}px) translateZ(${z}px) rotateY(${-itemAngle * (180 / Math.PI)}deg)`;
-        item.style.opacity = 1 - (Math.abs(z) / radius) * 0.5;
+        item.style.opacity = 1 - (Math.abs(z) / radius) * 0.3;
         item.style.zIndex = `${Math.round(100 - (z + radius))}`;
       });
 
