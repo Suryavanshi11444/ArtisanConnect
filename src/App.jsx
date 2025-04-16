@@ -1,15 +1,10 @@
-import React from 'react'
-import './index.css'
-import HeroPage from './pages/HeroPage'
-import PlacePage from './pages/PlacePage'
+// App.jsx
+import React from 'react';
+import './index.css';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
-  return (
-    <>
-    <HeroPage />
-    <PlacePage />
-    </>
-  )
+  return <AppRoutes />;
 }
 
-export default App
+export default App;

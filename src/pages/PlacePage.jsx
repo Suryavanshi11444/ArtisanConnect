@@ -1,5 +1,5 @@
 import React from 'react'
-import  FoundedPlaces from '../components/Hidden';
+import  FoundedPlaces from '../components/sections/Hidden';
 
 function PlacePage() {
   return (
