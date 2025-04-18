@@ -5,6 +5,7 @@ import Navbar from '../components/common/Navbar';
 import Footer from '../components/common/Footer';
 import HeroPage from '../pages/HeroPage';
 import PlacePage from '../pages/PlacePage';
+import ArtisanPage from '../pages/ArtisanPage';
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,7 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<HeroPage />} />
         <Route path="/places" element={<PlacePage />} />
+        <Route path="/artisan" element={<ArtisanPage />} />
       </Routes>
       <Footer/>
     </Router>
