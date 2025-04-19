@@ -73,7 +73,7 @@ const ArtisanHero = () => {
   };
 
   return (
-    <section className="relative h-screen bg-blue-100 overflow-hidden">
+    <section className="w-full h-screen bg-blue-100 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
