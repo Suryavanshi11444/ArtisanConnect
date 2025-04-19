@@ -55,8 +55,7 @@ const Navbar = () => {
                   { to: '/', label: 'Home' },
                   { to: '/places', label: 'Places' },
                   { to: '/artisan', label: 'Artisans' },
-                  { to: '/contact', label: 'Contact' },
-                  { to: '/about', label: 'About' },
+                  { to: '/contact', label: 'Join Us' }
                 ].map(({ to, label }) => (
                   <motion.div key={label} whileHover={{ y: -2 }}>
                     <Link
