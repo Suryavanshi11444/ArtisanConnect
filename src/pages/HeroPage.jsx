@@ -8,12 +8,14 @@ import Footer from '../components/common/Footer';
 import Faq12 from '../components/sections/FAQ';
 
 
+
 function HeroPage() {
   return (
     <>
    
     <HeroSection />
     <ImpactSection />
+
     <Workflow />
     <TestimonialSection />
     <Faq12 />

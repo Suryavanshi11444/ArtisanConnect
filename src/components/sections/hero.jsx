@@ -33,11 +33,11 @@ const HeroSection = () => {
                 </span>
               </div>
               <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-                Protect Marine Life Through{' '}
-                <span className="text-amber-300">Sustainable Tourism</span>
+              Empower Local Artisans Through{' '}
+                <span className="text-amber-300">Cultural Tourism</span>
               </h1>
               <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 max-w-lg">
-                Join our community of responsible travelers and help conserve sea turtles while experiencing authentic local cultures and artisan traditions.
+              Discover hidden gems, support traditional crafts, and experience authentic local culture — all while helping artisans thrive in the modern world.
               </p>
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 <motion.button
@@ -61,25 +61,26 @@ const HeroSection = () => {
           {/* Feature Blocks - 2x2 grid on md+, single column on smaller screens */}
           <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-12 lg:mt-0 lg:ml-8 xl:ml-12">
             {[
+              
               {
-                icon: '🐢',
-                title: 'Turtle Conservation',
-                desc: 'Participate in hands-on protection programs'
+                icon: '🧵',
+                title: 'Handmade Heritage',
+                desc: 'Shop unique crafts made by local artisans.'
               },
               {
-                icon: '✋',
-                title: 'Artisan Workshops',
-                desc: 'Learn traditional crafts from local masters'
+                icon: '🗺️',
+                title: 'Cultural Tours',
+                desc: 'Explore local traditions with artisan-led tours.'
               },
               {
-                icon: '🌿',
-                title: 'Eco-Friendly Stays',
-                desc: 'Sustainable accommodations worldwide'
+                icon: '🎨',
+                title: 'Craft Workshops',
+                desc: 'Learn traditional skills from local experts.'
               },
               {
-                icon: '🌎',
-                title: 'Global Impact',
-               
+                icon: '🌐',
+                title: 'Nationwide Reach',
+                desc: 'Celebrate diverse cultures across India.'
               }
             ].map((feature, index) => (
               <motion.div

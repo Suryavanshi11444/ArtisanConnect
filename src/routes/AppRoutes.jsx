@@ -7,6 +7,7 @@ import HeroPage from '../pages/HeroPage';
 import PlacePage from '../pages/PlacePage';
 import ArtisanPage from '../pages/ArtisanPage';
 import JoinPage from '../pages/JoinPage';
+import LoginPage from '../components/sections/Login';
 
 const AppRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const AppRoutes = () => {
         <Route path="/places" element={<PlacePage />} />
         <Route path="/artisan" element={<ArtisanPage />} />
         <Route path="/join" element={<JoinPage />} />
+        <Route path="/auth" element={<LoginPage />} />
       </Routes>
       <Footer/>
     </Router>

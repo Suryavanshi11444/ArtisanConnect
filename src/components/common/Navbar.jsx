@@ -105,14 +105,17 @@ const Navbar = () => {
                   )}
                 </motion.div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-amber-500 hover:bg-amber-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm font-medium shadow-md transition-colors flex items-center"
-                >
-                  <FiUser className="mr-1 sm:mr-2" /> 
-                  <span className="hidden sm:inline">Sign In</span>
-                </motion.button>
+                <Link to="/auth">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-amber-500 hover:bg-amber-600 text-white px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm font-medium shadow-md transition-colors flex items-center"
+                  >
+                    <FiUser className="mr-1 sm:mr-2" />
+                    <span className="hidden sm:inline">Sign In</span>
+                  </motion.button>
+                </Link>
+
               </div>
             </div>
 
@@ -201,15 +204,19 @@ const Navbar = () => {
                   </motion.div>
                 ))}
 
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full bg-amber-500 hover:bg-amber-600 text-white px-4 py-3 rounded-md text-base font-medium mt-2 flex items-center justify-center"
-                >
-                  <FiUser className="mr-2" /> Sign In
-                </motion.button>
+                <Link to="/auth">
+                  <motion.button
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-amber-500 hover:bg-amber-600 text-white px-4 py-3 rounded-md text-base font-medium mt-2 flex items-center justify-center"
+                  >
+                    <FiUser className="mr-2" /> Sign In
+                  </motion.button>
+                </Link>
+
+
               </div>
             </motion.div>
           )}
