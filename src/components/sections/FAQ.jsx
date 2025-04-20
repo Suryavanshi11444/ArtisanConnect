@@ -4,69 +4,68 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 const Faq12 = () => {
   const faqs = [
     {
-      question: "What is Feedback?",
-      answer: "Feedback is information about reactions to a product, a person's performance, etc., used as a basis for improvement."
+      question: "What is Artisan Connect 3?",
+      answer: "Artisan Connect 3 is a platform that connects local artisans with tourists, promoting cultural tourism and handmade products."
     },
     {
-      question: "Why should your organization use Feedback Application?",
-      answer: "It helps in gathering insights from users to improve services, products, or performance."
+      question: "How does the platform help artisans?",
+      answer: "It provides artisans with a digital marketplace and opportunity to earn by acting as local guides or selling handmade products."
     },
     {
-      question: "How to Contact Us?",
-      answer: "You can contact us via the Contact Us page or email support@feedbackapp.com."
+      question: "Can tourists book local guides through the platform?",
+      answer: "Yes, tourists can connect with registered artisans who offer personalized cultural tours and experiences."
     },
     {
-      question: "Trust Level of Feedback Application?",
-      answer: "Our feedback application ensures secure data handling and trusted insights with high accuracy."
+      question: "Are the handmade products authentic?",
+      answer: "Yes, all listed products are handcrafted by verified local artisans, ensuring authenticity and cultural value."
     },
     {
-      question: "What is Feedback?",
-      answer: "Feedback refers to the information or reactions about a service, product, or performance."
+      question: "How does the reward-based system work?",
+      answer: "Users earn rewards by discovering hidden gems and engaging with cultural experiences, which can be redeemed on the platform."
     },
     {
-      question: "Why should your organization use Feedback Application?",
-      answer: "It enables better decision-making through user insights."
-    },
-    // Additional 10 questions and answers
-    {
-      question: "How do I reset my password?",
-      answer: "To reset your password, click on the 'Forgot Password' link on the login page, and follow the instructions sent to your email."
+      question: "Is there an app available for Artisan Connect 3?",
+      answer: "We are currently developing a mobile app to enhance accessibility and user experience on the go."
     },
     {
-      question: "Is my data safe on this platform?",
-      answer: "Yes, we use encryption protocols to ensure that your data is protected and handled securely."
+      question: "How can an artisan register on the platform?",
+      answer: "Artisans can sign up through our website by providing basic information, skills, and uploading sample works for verification."
     },
     {
-      question: "Can I update my profile information?",
-      answer: "Yes, you can update your profile by going to your account settings and editing your personal details."
+      question: "Is the platform available across India?",
+      answer: "We are initially launching in selected states and plan to expand across India with broader artisan involvement."
     },
     {
-      question: "Can I cancel my subscription?",
-      answer: "Yes, you can cancel your subscription anytime by going to your account settings and selecting 'Cancel Subscription.'"
+      question: "What kind of cultural experiences are available?",
+      answer: "Users can explore village tours, traditional crafting sessions, local festivals, and more through artisan-led experiences."
     },
     {
-      question: "How do I provide feedback?",
-      answer: "You can provide feedback by filling out the feedback form available in your dashboard or through the 'Give Feedback' button."
+      question: "Can I buy souvenirs directly from the artisans?",
+      answer: "Absolutely! You can browse, purchase, and even request custom handmade souvenirs from artisans on the platform."
     },
     {
-      question: "Can I get notifications about new features?",
-      answer: "Yes, you can enable notifications in your account settings to stay updated with new features and updates."
+      question: "How does the platform ensure quality and trust?",
+      answer: "We verify all artisans before listing, collect user feedback, and continuously monitor quality for a trustworthy experience."
     },
     {
-      question: "How can I upgrade to a premium account?",
-      answer: "To upgrade to a premium account, go to your account settings and select the 'Upgrade' option to choose a plan."
+      question: "Will there be AR/VR experiences in the future?",
+      answer: "Yes! We're working on integrating AR/VR to offer immersive previews of cultural sites and artisan workshops."
     },
     {
-      question: "What should I do if I encounter a bug?",
-      answer: "If you encounter a bug, please report it by using the 'Report a Bug' option in the help section or contacting our support team."
+      question: "Can users review and rate artisans?",
+      answer: "Yes, users can provide ratings and reviews after each experience or purchase, helping others choose wisely."
     },
     {
-      question: "How can I delete my account?",
-      answer: "If you wish to delete your account, please contact our support team via email, and they will assist you with the process."
+      question: "What payment methods are supported?",
+      answer: "We support secure payments via UPI, credit/debit cards, and mobile wallets for hassle-free transactions."
     },
     {
-      question: "Is there a mobile app for Feedback?",
-      answer: "Yes, we have a mobile app available for both iOS and Android devices. You can download it from the App Store or Google Play."
+      question: "Can foreign tourists use the platform?",
+      answer: "Yes, our platform supports multiple languages and currencies, making it tourist-friendly for international users."
+    },
+    {
+      question: "What are 'Hidden Gems' on the platform?",
+      answer: "Hidden Gems are unique, lesser-known cultural spots suggested by artisans that users can explore and earn rewards for discovering."
     },
   ];
   
