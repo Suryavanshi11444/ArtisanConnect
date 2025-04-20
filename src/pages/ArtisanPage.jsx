@@ -2,6 +2,8 @@ import React from 'react'
 import ArtisanHero from '../components/sections/Artist';
 import ArtisanTopProducts from '../components/sections/ArAbout'
 import BuyerReviews from '../components/sections/Buyer';
+import Mainfeature from '../components/sections/Mainfeature';
+
 
 function ArtisanPage() {
   return (
@@ -9,6 +11,7 @@ function ArtisanPage() {
       <ArtisanHero/>
       <ArtisanTopProducts/>
       <BuyerReviews/>
+      <Mainfeature/>
     </div>
   )
 }
