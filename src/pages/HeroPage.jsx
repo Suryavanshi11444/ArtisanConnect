@@ -6,7 +6,7 @@ import  ImpactSection from '../components/sections/About';
 import HeroSection from '../components/sections/hero';
 import Footer from '../components/common/Footer';
 import Faq12 from '../components/sections/FAQ';
-
+import Mainfeature from '../components/sections/Mainfeature';
 
 function HeroPage() {
   return (
@@ -14,9 +14,11 @@ function HeroPage() {
    
     <HeroSection />
     <ImpactSection />
+    <Mainfeature/>
     <Workflow />
     <TestimonialSection />
     <Faq12 />
+
     
     
     </>
