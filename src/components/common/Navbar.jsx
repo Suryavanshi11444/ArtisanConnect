@@ -182,11 +182,10 @@ const Navbar = () => {
             >
               <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 {[
-                  { to: '/', label: 'Home' },
-                  { to: '/places', label: 'Places' },
-                  { to: '/conservation', label: 'Conservation' },
-                  { to: '/artisans', label: 'Artisans' },
-                  { to: '/about', label: 'About' },
+                   { to: '/', label: 'Home' },
+                   { to: '/places', label: 'Places' },
+                   { to: '/artisan', label: 'Artisans' },
+                   { to: '/join', label: 'Join Us' }
                 ].map(({ to, label }, index) => (
                   <motion.div
                     key={label}
