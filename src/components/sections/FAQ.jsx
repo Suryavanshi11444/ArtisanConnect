@@ -94,7 +94,7 @@ const Faq12 = () => {
   const displayedFaqs = faqs.slice(currentPage * questionsPerPage, (currentPage + 1) * questionsPerPage);
 
   return (
-    <div className="bg-white text-black py-20 font-['Roboto'] flex justify-center">
+    <div className="bg-white text-black py-20 flex justify-center">
       <div className="w-[90%] max-w-6xl">
         <div className="relative text-center mb-6">
           {/* Background Text */}
@@ -107,7 +107,7 @@ const Faq12 = () => {
           {/* Foreground Text */}
           <div className="relative z-10 text-4xl font-bold">
             Frequently Ask Question <br />
-            <span className="text-cyan-500 text-sm cursor-pointer">Click Here</span>
+            <span className="text-[#ff9933] text-sm cursor-pointer">Click Here</span>
             <span className="text-black text-sm cursor-pointer"> ___to buy now</span>
           </div>
         </div>
@@ -126,9 +126,9 @@ const Faq12 = () => {
                 >
                   <p className="text-base font-medium">{faq.question}</p>
                   {activeIndex === index ? (
-                    <FaChevronUp className="text-cyan-500" />
+                    <FaChevronUp className="text-[#ff9933]" />
                   ) : (
-                    <FaChevronDown className="text-cyan-500" />
+                    <FaChevronDown className="text-[#ff9933]" />
                   )}
                 </div>
                 {activeIndex === index && (
@@ -138,13 +138,13 @@ const Faq12 = () => {
             ))}
             <div className="text-center mt-4">
               <button
-                className="bg-blue-900 hover:bg-cyan-500 text-white w-10 h-10 rounded-full mx-2 shadow-md"
+                className="bg-[#ff9933] hover:bg-[#E07F1E] text-white w-10 h-10 rounded-full mx-2 shadow-md"
                 onClick={previous}
               >
                 &lt;
               </button>
               <button
-                className="bg-blue-900 hover:bg-cyan-500 text-white w-10 h-10 rounded-full mx-2 shadow-md"
+                className="bg-[#ff9933] hover:bg-[#E07F1E] text-white w-10 h-10 rounded-full mx-2 shadow-md"
                 onClick={next}
               >
                 &gt;
@@ -171,7 +171,7 @@ const Faq12 = () => {
                 placeholder="Enter Here"
                 className="w-full p-2 border border-gray-300 rounded-md mt-1"
               />
-              <button className="bg-gradient-to-r from-blue-900 to-blue-900 text-white px-6 py-2 mt-9 rounded-full shadow-lg hover:shadow-6xl transition-all">
+              <button className="bg-[#ff9933] hover:bg-[#E07F1E] text-white px-6 py-2 mt-9 rounded-full shadow-lg hover:shadow-6xl transition-all">
                 Send
               </button>
             </div>

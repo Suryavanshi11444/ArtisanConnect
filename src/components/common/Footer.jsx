@@ -49,15 +49,15 @@ const sociaIcons = [
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900/90 text-white pt-10 px-4 md:px-16">
+    <footer className="bg-white text-gray-800 pt-10 px-4 md:px-16 border-t">
       <div className="max-w-7xl mx-auto">
         {/* CTA Section */}
-        <div className="bg-white text-black rounded-xl p-6 md:p-10 mb-12 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
+        <div className="bg-[#FF9933]/10 text-black rounded-xl p-6 md:p-10 mb-12 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10">
           <div className="text-left max-w-md">
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+            <h2 className="text-2xl md:text-3xl font-bold mb-2 text-[#FF9933]">
               Get 10% Off Your First Order
             </h2>
-            <p className="text-sm md:text-base text-gray-800">
+            <p className="text-sm md:text-base text-gray-700">
               Sign up now for exclusive news and savings. Be the first to know.
             </p>
           </div>
@@ -67,28 +67,28 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-5 py-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-900 text-black bg-white text-sm md:text-base"
+                className="flex-1 px-5 py-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-[#FF9933] text-black bg-white text-sm md:text-base"
               />
-              <button className="bg-blue-900 text-white px-5 py-3 rounded-r-md text-sm md:text-base transition">
+              <button className="bg-[#FF9933] text-white px-5 py-3 rounded-r-md text-sm md:text-base transition hover:bg-orange-500">
                 Sign Up
               </button>
             </div>
-            <p className="text-xs text-gray-700 max-w-xs">
+            <p className="text-xs text-gray-500 max-w-xs">
               *Offer valid for full-price items only. Terms apply.
             </p>
           </div>
         </div>
 
         {/* Grid Sections */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-white/30 pb-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 border-b border-gray-200 pb-10">
           <div>
-            <h5 className="font-semibold mb-4 text-lg text-white">Quick Links</h5>
+            <h5 className="font-semibold mb-4 text-lg text-[#FF9933]">Quick Links</h5>
             <ul>
               {quickLinks.map((item, idx) => (
                 <li className="mb-2" key={idx}>
                   <a
                     href={item.href}
-                    className="text-white/70 hover:text-amber-400 transition"
+                    className="text-gray-700 hover:text-[#FF9933] transition"
                   >
                     {item.value}
                   </a>
@@ -97,13 +97,13 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold mb-4 text-lg text-white">Social Media</h5>
+            <h5 className="font-semibold mb-4 text-lg text-[#FF9933]">Social Media</h5>
             <ul>
               {socialMedia.map((item, idx) => (
                 <li className="mb-2" key={idx}>
                   <a
                     href={item.href}
-                    className="text-white/70 hover:text-amber-400 transition"
+                    className="text-gray-700 hover:text-[#FF9933] transition"
                   >
                     {item.value}
                   </a>
@@ -112,13 +112,13 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold mb-4 text-lg text-white">Job Info</h5>
+            <h5 className="font-semibold mb-4 text-lg text-[#FF9933]">Job Info</h5>
             <ul>
               {jobInfo.map((item, idx) => (
                 <li className="mb-2" key={idx}>
                   <a
                     href={item.href}
-                    className="text-white/70 hover:text-amber-400 transition"
+                    className="text-gray-700 hover:text-[#FF9933] transition"
                   >
                     {item.value}
                   </a>
@@ -127,7 +127,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h5 className="font-semibold mb-4 text-lg text-white">Language</h5>
+            <h5 className="font-semibold mb-4 text-lg text-[#FF9933]">Language</h5>
             <select className="w-full p-2 bg-white text-black rounded-md border border-gray-300">
               {language.map((lang, idx) => (
                 <option value={lang.value} key={idx}>
@@ -135,7 +135,7 @@ const Footer = () => {
                 </option>
               ))}
             </select>
-            <h5 className="font-semibold mt-6 mb-4 text-lg text-white">Currency</h5>
+            <h5 className="font-semibold mt-6 mb-4 text-lg text-[#FF9933]">Currency</h5>
             <select className="w-full p-2 bg-white text-black rounded-md border border-gray-300">
               {currency.map((cur, idx) => (
                 <option value={cur.value} key={idx}>
@@ -153,7 +153,7 @@ const Footer = () => {
               <li key={idx}>
                 <a
                   href={item.href}
-                  className="text-2xl text-white hover:text-amber-400 transition"
+                  className="text-2xl text-gray-700 hover:text-[#FF9933] transition"
                 >
                   <FontAwesomeIcon icon={item.icon} />
                 </a>
@@ -163,11 +163,11 @@ const Footer = () => {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-10 flex flex-col md:flex-row justify-between items-center border-t pt-6 border-white/30">
-          <div className="text-sm text-white/80 text-center md:text-left mb-4 md:mb-0">
-            Powered by <span className="text-white font-semibold">Easy Frontend</span>
+        <div className="mt-10 flex flex-col md:flex-row justify-between items-center border-t pt-6 border-gray-200">
+          <div className="text-sm text-gray-500 text-center md:text-left mb-4 md:mb-0">
+            Powered by <span className="text-[#FF9933] font-semibold">Easy Frontend</span>
           </div>
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm text-white/70 text-center md:text-right">
+          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-sm text-gray-500 text-center md:text-right">
             <span className="text-sm">
               &copy; {new Date().getFullYear()} Easy Frontend. All rights reserved.
             </span>
@@ -175,7 +175,7 @@ const Footer = () => {
               <a
                 key={idx}
                 href={item.href}
-                className="hover:underline hover:text-amber-400 transition"
+                className="hover:underline hover:text-[#FF9933] transition"
               >
                 {item.value}
               </a>

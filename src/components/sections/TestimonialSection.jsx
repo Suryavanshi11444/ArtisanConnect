@@ -67,7 +67,7 @@ const StarRating = ({ count }) => (
         initial={{ scale: 0.8, opacity: 0.5 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: i * 0.1, type: "spring" }}
-        className={`text-lg ${i < count ? "text-blue-600" : "text-gray-300"}`}
+        className={`text-lg ${i < count ? "text-[#E07F1E]" : "text-gray-300"}`}
       >
         ★
       </motion.span>
@@ -88,7 +88,7 @@ const TestimonialCard = ({ testimonial }) => {
     >
       {/* Gradient accent */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-1 bg-blue-600"
+        className="absolute top-0 left-0 w-full h-1 bg-[#FF9933] "
         initial={{ width: 0 }}
         whileInView={{ width: "100%" }}
         transition={{ duration: 1, delay: 0.3 }}
@@ -103,7 +103,7 @@ const TestimonialCard = ({ testimonial }) => {
         transition={{ delay: 0.2 }}
       >
         <div className="relative w-16 h-16 mx-auto">
-          <div className="absolute inset-0 bg-blue-600 rounded-full blur-md opacity-20 group-hover:opacity-30 transition-all" />
+          <div className="absolute inset-0 bg-[#FF9933]  rounded-full blur-md opacity-20 group-hover:opacity-30 transition-all" />
           <motion.img
             src={image}
             alt={name}
@@ -116,7 +116,7 @@ const TestimonialCard = ({ testimonial }) => {
             animate={{ scale: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <div className="bg-blue-600 text-white rounded-full w-6 h-6 flex items-center justify-center">
+            <div className="bg-[#E07F1E] text-white rounded-full w-6 h-6 flex items-center justify-center">
               <FaQuoteLeft className="text-xs" />
             </div>
           </motion.div>
@@ -166,7 +166,7 @@ const TestimonialSection = () => {
         {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute rounded-full bg-blue-600"
+            className="absolute rounded-full bg-[#FF9933] "
             style={{
               width: Math.random() * 200 + 50,
               height: Math.random() * 200 + 50,
@@ -227,7 +227,7 @@ const TestimonialSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-blue-600 text-white px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all"
+            className="bg-[#FF9933]  text-white px-6 py-3 rounded-full font-medium shadow-md hover:shadow-lg transition-all"
           >
             Get Started Today
           </motion.button>

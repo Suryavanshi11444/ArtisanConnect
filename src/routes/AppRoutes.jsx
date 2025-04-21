@@ -9,6 +9,7 @@ import ArtisanPage from '../pages/ArtisanPage';
 import JoinPage from '../pages/JoinPage';
 import LoginPage from '../components/sections/Login';
 
+
 const AppRoutes = () => {
   return (
     <Router>

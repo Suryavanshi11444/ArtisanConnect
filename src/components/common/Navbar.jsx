@@ -33,7 +33,7 @@ const Navbar = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         className={`fixed w-full z-50 transition-all duration-300 ${
-          scrolled ? 'bg-blue-900/90 backdrop-blur-md py-2 shadow-lg' : 'bg-blue-900/90 py-3'
+          scrolled ? 'bg-white backdrop-blur-md py-2 shadow-lg' : 'bg-white py-3'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +42,7 @@ const Navbar = () => {
             <motion.div whileHover={{ scale: 1.05 }} className="flex-shrink-0 flex items-center">
               <Link to="/" className="flex items-center">
                 <span className="text-3xl">🐢</span>
-                <span className="ml-3 text-xl font-bold text-white hidden sm:block">
+                <span className="ml-3 text-xl font-bold text-black hidden sm:block">
                   Artisan<span className="text-amber-400">Connect</span>
                 </span>
               </Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
                   <motion.div key={label} whileHover={{ y: -2 }}>
                     <Link
                       to={to}
-                      className="text-white hover:text-amber-300 px-2 sm:px-3 py-2 text-sm font-medium relative group"
+                      className="text-black hover:text-amber-300 px-2 sm:px-3 py-2 text-sm font-medium relative group"
                     >
                       {label}
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-400 transition-all duration-300 group-hover:w-full"></span>
@@ -87,7 +87,7 @@ const Navbar = () => {
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search..."
-                        className="bg-blue-800 text-white placeholder-blue-300 rounded-l-md px-3 py-1 text-sm w-32 sm:w-40 focus:outline-none focus:ring-1 focus:ring-amber-400 transition-all"
+                        className="bg-blue-800 text-black placeholder-blue-300 rounded-l-md px-3 py-1 text-sm w-32 sm:w-40 focus:outline-none focus:ring-1 focus:ring-amber-400 transition-all"
                         autoFocus
                       />
                       <button 
