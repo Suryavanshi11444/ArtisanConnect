@@ -1,165 +1,162 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 const HeroSection = () => {
+  const cursorRef = useRef(null);
+
+  // Cursor motion values
+  const mouseX = useMotionValue(-100);
+  const mouseY = useMotionValue(-100);
+
+  const springX = useSpring(mouseX, { damping: 25, stiffness: 300 });
+  const springY = useSpring(mouseY, { damping: 25, stiffness: 300 });
+
+  useEffect(() => {
+    const moveCursor = (e) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+    window.addEventListener('mousemove', moveCursor);
+    return () => window.removeEventListener('mousemove', moveCursor);
+  }, [mouseX, mouseY]);
+
   return (
-    <div className="relative w-full min-h-screen overflow-hidden">
-      {/* Background Image with Gradient Overlay */}
-      <div className="absolute inset-0">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full h-full object-cover"
+    <div className="relative w-full min-h-screen bg-white overflow-hidden cursor-none">
+      {/* White Background with Subtle Texture */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-10"></div>
+
+      {/* Custom Cursor with Rectangles */}
+      <motion.div
+        ref={cursorRef}
+        className="fixed top-0 left-0 pointer-events-none z-[9999]"
+        style={{
+          x: springX,
+          y: springY,
+        }}
       >
-        <source src="https://www.incredibleindia.gov.in/content/dam/incredible-india/videos/home/India-360-v2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 to-black/40"></div>
-      </div>
+        {/* Multiple rotating rectangle borders */}
+        {[0, 1, 2].map((i) => (
+          <motion.diva
+            key={i}
+            className="absolute border border-[#FF9933]/40 w-6 h-6 rounded-[4px]"
+            animate={{ rotate: 360 }}
+            transition={{
+              repeat: Infinity,
+              duration: 3 + i,
+              ease: 'linear',
+            }}
+            style={{
+              top: -i * 5,
+              left: -i * 5,
+              width: 24 + i * 10,
+              height: 24 + i * 10,
+            }}
+          />
+        ))}
+      </motion.div>
 
       {/* Content Container */}
-      <div className="relative z-10 h-full flex flex-col justify-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-24 max-w-7xl mx-auto py-24">
+      <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto py-24">
         {/* Main Content */}
-        <div className="flex flex-col lg:flex-row items-center">
+        <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* Text Content */}
-          <div className="lg:w-1/2 mb-8 lg:mb-0">
+          <div className="lg:w-2/3 mb-8 lg:mb-0">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center mb-4 sm:mb-6">
-                <div className="w-8 sm:w-12 h-0.5 sm:h-1 bg-amber-400 mr-3 sm:mr-4"></div>
-                <span className="text-amber-300 text-sm sm:text-base font-medium tracking-wider">
-                  ARTISAN CONNECT
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="inline-block bg-[#FF9933]/10 px-4 py-2 rounded-full mb-6"
+              >
+                <span className="text-[#FF9933] text-sm font-medium tracking-wider">
+                  PRESERVING CULTURAL HERITAGE
                 </span>
-              </div>
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-              Empower Local Artisans Through{' '}
-                <span className="text-amber-300">Cultural Tourism</span>
+              </motion.div>
+
+              <h1 className="text-4xl xs:text-5xl sm:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Bridging <span className="text-[#FF9933]">Artisans</span> with <br />
+                The Modern World
               </h1>
-              <p className="text-base sm:text-lg text-blue-100 mb-6 sm:mb-8 max-w-lg">
-              Discover hidden gems, support traditional crafts, and experience authentic local culture — all while helping artisans thrive in the modern world.
+
+              <p className="text-lg text-gray-600 mb-8 max-w-2xl">
+                Discover authentic craftsmanship through immersive experiences that
+                connect you directly with India's most skilled artisans and their
+                centuries-old traditions.
               </p>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
+
+              <div className="flex flex-wrap gap-4">
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg transition-colors text-sm sm:text-base"
+                  whileHover={{ y: -2, boxShadow: "0 6px 12px rgba(255, 153, 51, 0.2)" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-[#FF9933] hover:bg-[#E07F1E] text-white font-medium py-3 px-8 rounded-lg shadow-md transition-all"
                 >
-                  Explore Tours
+                  Explore Artisans
                 </motion.button>
                 <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent border border-white text-white hover:bg-white/10 font-bold py-2 sm:py-3 px-6 sm:px-8 rounded-full shadow-lg transition-colors text-sm sm:text-base"
+                  whileHover={{ y: -2, backgroundColor: "#f8fafc" }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-white border-2 border-gray-200 text-gray-700 hover:border-[#FF9933] font-medium py-3 px-8 rounded-lg shadow-sm transition-all"
                 >
-                  Learn More
+                  Learn Their Stories
                 </motion.button>
               </div>
             </motion.div>
           </div>
 
-          {/* Feature Blocks - 2x2 grid on md+, single column on smaller screens */}
-          <div className="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-12 lg:mt-0 lg:ml-8 xl:ml-12">
+          {/* Artisan Showcase */}
+          <div className="lg:w-1/3 grid grid-cols-2 gap-4">
             {[
-              
-              {
-                icon: '🧵',
-                title: 'Handmade Heritage',
-                desc: 'Shop unique crafts made by local artisans.'
-              },
-              {
-                icon: '🗺️',
-                title: 'Cultural Tours',
-                desc: 'Explore local traditions with artisan-led tours.'
-              },
-              {
-                icon: '🎨',
-                title: 'Craft Workshops',
-                desc: 'Learn traditional skills from local experts.'
-              },
-              {
-                icon: '🌐',
-                title: 'Nationwide Reach',
-                desc: 'Celebrate diverse cultures across India.'
-              }
-            ].map((feature, index) => (
+              { image: "https://images.unsplash.com/photo-1597047084897-51e81819a499?auto=format&fit=crop&w=800&q=80", title: "Pottery" },
+              { image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=800&q=80", title: "Textiles" },
+              { image: "https://images.unsplash.com/photo-1583744946564-b52d01e2da64?auto=format&fit=crop&w=800&q=80", title: "Jewelry" },
+              { image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80", title: "Woodwork" }
+            ].map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
                 whileHover={{ y: -5 }}
-                className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-4 sm:p-6 border border-white/20 shadow-lg"
+                className="relative group overflow-hidden rounded-xl shadow-md"
               >
-                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3">{feature.icon}</div>
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-blue-100 text-sm sm:text-base">
-                  {feature.desc}
-                </p>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-40 object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-4">
+                  <h3 className="text-white font-medium text-sm">{item.title}</h3>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Responsive Video - Now properly contained */}
+        {/* Moving Decorative Elements */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="absolute right-4 bottom-4 w-64 h-48 max-w-[12rem] sm:max-w-[20rem] md:max-w-[24rem] lg:max-w-[28rem] xl:max-w-[32rem] aspect-video"
+          animate={{
+            x: [0, -50, 0, 50, 0],
+            y: [0, 50, 0, -50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute right-12 bottom-12 hidden lg:block"
         >
-          <div className="relative w-full h-full rounded-lg sm:rounded-xl overflow-hidden shadow-xl sm:shadow-2xl border border-white/20 sm:border-2">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-            >
-              <source src="/Art.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                <svg 
-                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-              </div>
-            </div>
+          <div className="relative w-64 h-64">
+            <div className="absolute inset-0 border-2 border-[#FF9933]/30 rounded-full animate-spin-slow"></div>
+            <div className="absolute inset-8 border-2 border-[#FF9933]/20 rounded-full animate-spin-slow-reverse"></div>
+            <div className="absolute inset-16 border-2 border-[#FF9933]/10 rounded-full animate-spin-slow"></div>
           </div>
         </motion.div>
-      </div>
 
-      {/* Responsive Water Wave Decoration */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="w-full h-16 sm:h-20 md:h-24">
-          <path 
-            d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
-            opacity=".25" 
-            className="fill-current text-[#F4E2D8]"
-          ></path>
-          <path 
-            d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" 
-            opacity=".5" 
-            className="fill-current text-[#D9AE94]"
-          ></path>
-          <path 
-            d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" 
-            opacity=".5"
-            className="fill-current text-black"
-          ></path>
-        </svg>
+        
       </div>
     </div>
   );
