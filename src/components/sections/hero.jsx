@@ -82,7 +82,7 @@ const HeroSection = () => {
             {[
               { image: "https://images.unsplash.com/photo-1597047084897-51e81819a499?auto=format&fit=crop&w=800&q=80", title: "Pottery" },
               { image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?auto=format&fit=crop&w=800&q=80", title: "Textiles" },
-              { image: "https://images.unsplash.com/photo-1583744946564-b52d01e2da64?auto=format&fit=crop&w=800&q=80", title: "Jewelry" },
+              { image: "https://img.freepik.com/premium-photo/close-up-female-hand-drawing-colorful-watercolor-painting-art-concept_199784-1896.jpg", title: "Jewelry" },
               { image: "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80", title: "Woodwork" }
             ].map((item, index) => (
               <motion.div

@@ -217,7 +217,7 @@ const ArtisanTopProducts = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={() => setExpanded(!expanded)}
-                  className="bg-blue-600 hover:bg-gray text-white font-medium py-2 px-6 rounded-full transition-colors duration-200 shadow-md"
+                  className="bg-[#ff9933] hover:bg-gray text-white font-medium py-2 px-6 rounded-full transition-colors duration-200 shadow-md"
                 >
                   {expanded ? 'Show Less' : 'Show More'}
                 </motion.button>
