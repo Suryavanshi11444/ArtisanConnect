@@ -22,7 +22,8 @@ const HeroSection = () => {
 
   return (
     <div className="relative w-full min-h-screen bg-white overflow-hidden cursor-none">
-     
+
+      
 
       {/* Content Container */}
       <div className="relative z-10 h-full flex flex-col justify-center px-6 sm:px-12 lg:px-24 max-w-7xl mx-auto py-24">

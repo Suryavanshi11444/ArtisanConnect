@@ -61,7 +61,7 @@ const BuyerReviews = () => {
   };
 
   return (
-    <section className="bg-blue-50 py-16 px-4 sm:px-6 lg:px-8">
+    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,32 +69,31 @@ const BuyerReviews = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-black sm:text-4xl">What Our Buyers Say</h2>
-          <p className="mt-4 text-lg text-blue-900 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-[#FF9933] sm:text-4xl">What Our Buyers Say</h2>
+          <p className="mt-4 text-lg text-gray-700 max-w-3xl mx-auto">
             Hear from customers who've experienced our artisan products firsthand
           </p>
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Main Review Card */}
           <motion.div
             key={reviews[activeReview].id}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -50 }}
             transition={{ duration: 0.3 }}
-            className="bg-white p-8 rounded-lg shadow-lg border border-blue-100"
+            className="bg-white p-8 rounded-xl shadow-lg border border-orange-100"
           >
             <div className="flex flex-col md:flex-row gap-6">
               <div className="flex-shrink-0">
                 <img 
                   src={reviews[activeReview].image} 
                   alt={reviews[activeReview].name}
-                  className="w-24 h-24 rounded-full object-cover border-4 border-blue-200"
+                  className="w-24 h-24 rounded-full object-cover border-4 border-orange-200"
                 />
                 <div className="mt-4 text-center">
                   <p className="font-medium text-black">{reviews[activeReview].name}</p>
-                  <p className="text-sm text-blue-800">{reviews[activeReview].location}</p>
+                  <p className="text-sm text-[#FF9933]">{reviews[activeReview].location}</p>
                 </div>
               </div>
               <div>
@@ -111,65 +110,64 @@ const BuyerReviews = () => {
                       </svg>
                     ))}
                   </div>
-                  <span className="ml-2 text-sm font-medium text-blue-900">
+                  <span className="ml-2 text-sm font-medium text-[#FF9933]">
                     Purchased: {reviews[activeReview].product}
                   </span>
                 </div>
-                <blockquote className="text-lg text-black">
+                <blockquote className="text-lg text-gray-800">
                   <p>"{reviews[activeReview].comment}"</p>
                 </blockquote>
               </div>
             </div>
           </motion.div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Buttons */}
           <button
             onClick={prevReview}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white p-2 rounded-full shadow-md border border-blue-200 hover:bg-blue-50 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white p-2 rounded-full shadow-md border border-orange-200 hover:bg-orange-50 transition-colors"
           >
-            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-[#FF9933]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
           </button>
           <button
             onClick={nextReview}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white p-2 rounded-full shadow-md border border-blue-200 hover:bg-blue-50 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white p-2 rounded-full shadow-md border border-orange-200 hover:bg-orange-50 transition-colors"
           >
-            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-6 h-6 text-[#FF9933]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>
           </button>
 
-          {/* Review Indicators */}
+          {/* Indicator Dots */}
           <div className="flex justify-center mt-8 space-x-2">
             {reviews.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveReview(index)}
-                className={`w-3 h-3 rounded-full transition-colors ${activeReview === index ? 'bg-blue-600' : 'bg-blue-200'}`}
-                aria-label={`Go to review ${index + 1}`}
+                className={`w-3 h-3 rounded-full transition-colors ${activeReview === index ? 'bg-[#FF9933]' : 'bg-orange-200'}`}
               />
             ))}
           </div>
         </div>
 
-        {/* Additional Reviews Grid */}
+        {/* Additional Reviews */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {reviews.filter((_, i) => i !== activeReview).slice(0, 3).map((review) => (
             <motion.div
               key={review.id}
               whileHover={{ y: -5 }}
-              className="bg-white p-6 rounded-lg shadow-md border border-blue-100"
+              className="bg-white p-6 rounded-lg shadow-md border border-orange-100"
             >
               <div className="flex items-center mb-4">
                 <img 
                   src={review.image} 
                   alt={review.name}
-                  className="w-12 h-12 rounded-full object-cover border-2 border-blue-200"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-orange-200"
                 />
                 <div className="ml-4">
                   <p className="font-medium text-black">{review.name}</p>
-                  <p className="text-sm text-blue-800">{review.location}</p>
+                  <p className="text-sm text-[#FF9933]">{review.location}</p>
                 </div>
               </div>
               <div className="flex mb-3">
@@ -184,8 +182,8 @@ const BuyerReviews = () => {
                   </svg>
                 ))}
               </div>
-              <p className="text-sm text-blue-900 mb-2">Purchased: {review.product}</p>
-              <p className="text-black">"{review.comment.substring(0, 100)}..."</p>
+              <p className="text-sm text-[#FF9933] mb-2">Purchased: {review.product}</p>
+              <p className="text-gray-700">"{review.comment.substring(0, 100)}..."</p>
             </motion.div>
           ))}
         </div>

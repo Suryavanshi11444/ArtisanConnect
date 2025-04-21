@@ -228,7 +228,7 @@ const JoinUs = () => {
   const currentFormConfig = opportunities.find(o => o.id === openForm);
 
   return (
-    <section className="relative overflow-hidden py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <section className="relative overflow-hidden py-20 px-4 bg-white">
       {/* Animated background elements */}
       <motion.div 
         animate={{
@@ -240,7 +240,7 @@ const JoinUs = () => {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-20 left-10 w-64 h-64 rounded-full bg-blue-100 opacity-10 blur-3xl"
+        className="absolute top-20 left-10 w-64 h-64 rounded-full bg-orange-100 opacity-10 blur-3xl"
       />
       
       <motion.div 
@@ -267,7 +267,7 @@ const JoinUs = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
           >
-            Join Our <span className="text-blue-600">Community</span>
+            Join Our <span className="text-[#FF9933]">Community</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -293,7 +293,7 @@ const JoinUs = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-1"
             >
               <div className="p-6 h-full flex flex-col">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-100 to-blue-50 text-blue-600 flex items-center justify-center mb-6 mx-auto shadow-inner">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-orange-100 to-orange-50 text-[#FF9933] flex items-center justify-center mb-6 mx-auto shadow-inner">
                   {opp.icon}
                 </div>
                 <h3 className="text-xl font-bold text-center text-gray-900 mb-3">{opp.title}</h3>
@@ -304,7 +304,7 @@ const JoinUs = () => {
                   <ul className="space-y-3">
                     {opp.benefits.map((benefit, i) => (
                       <li key={i} className="flex items-start">
-                        <FaStar className="text-amber-500 mt-1 mr-3 flex-shrink-0" />
+                        <FaStar className="text-[#FF9933] mt-1 mr-3 flex-shrink-0" />
                         <span className="text-gray-700">{benefit}</span>
                       </li>
                     ))}
@@ -316,7 +316,7 @@ const JoinUs = () => {
                     onClick={() => setOpenForm(opp.id)}
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.98 }}
-                    className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-medium hover:from-blue-700 hover:to-blue-600 transition-all w-full shadow-md"
+                    className="px-6 py-3 rounded-full bg-gradient-to-r from-[#FF9933] to-[#FF6600] text-white font-medium hover:from-[#FF8800] hover:to-[#FF5500] transition-all w-full shadow-md"
                   >
                     {opp.btnText}
                   </motion.button>
@@ -340,7 +340,7 @@ const JoinUs = () => {
                 className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden"
               >
                 <div className="md:flex">
-                  <div className="md:w-1/3 bg-gradient-to-b from-blue-600 to-blue-500 p-6 text-white">
+                  <div className="md:w-1/3 bg-gradient-to-b from-[#FF9933] to-[#FF6600] p-6 text-white">
                     <div className="h-full flex flex-col justify-center">
                       <div className="w-20 h-20 rounded-full bg-white bg-opacity-20 flex items-center justify-center mb-6 mx-auto">
                         {currentFormConfig?.icon}
@@ -348,15 +348,15 @@ const JoinUs = () => {
                       <h3 className="text-xl font-bold text-center mb-2">
                         {currentFormConfig?.title}
                       </h3>
-                      <p className="text-center text-blue-100 mb-6">
+                      <p className="text-center text-orange-100 mb-6">
                         {currentFormConfig?.description}
                       </p>
                       <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                        <h4 className="text-xs font-semibold mb-2 text-blue-100 tracking-wider uppercase">What We Look For</h4>
+                        <h4 className="text-xs font-semibold mb-2 text-orange-100 tracking-wider uppercase">What We Look For</h4>
                         <ul className="space-y-2 text-sm">
                           {currentFormConfig?.benefits.map((item, i) => (
                             <li key={i} className="flex items-start">
-                              <FaStar className="text-amber-300 mt-0.5 mr-2 flex-shrink-0" />
+                              <FaStar className="text-amber-200 mt-0.5 mr-2 flex-shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -375,7 +375,7 @@ const JoinUs = () => {
                           name="name"
                           value={formData.name}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9933] focus:border-[#FF9933]"
                           required
                         />
                       </div>
@@ -388,7 +388,7 @@ const JoinUs = () => {
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9933] focus:border-[#FF9933]"
                           required
                         />
                       </div>
@@ -429,7 +429,7 @@ const JoinUs = () => {
                                       type="text"
                                       value={link}
                                       onChange={(e) => handleLinkChange(linkIndex, e.target.value)}
-                                      className="pl-10 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                      className="pl-10 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9933] focus:border-[#FF9933]"
                                       placeholder={field.placeholder}
                                     />
                                   </div>
@@ -447,7 +447,7 @@ const JoinUs = () => {
                               <button
                                 type="button"
                                 onClick={addLinkField}
-                                className="text-sm text-blue-600 hover:text-blue-800 flex items-center"
+                                className="text-sm text-[#FF9933] hover:text-[#FF6600] flex items-center"
                               >
                                 <span className="mr-1">+ Add another link</span>
                               </button>
@@ -462,7 +462,7 @@ const JoinUs = () => {
                                 name={field.name}
                                 value={formData[field.name] || ''}
                                 onChange={handleInputChange}
-                                className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                                className="pl-10 w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9933] focus:border-[#FF9933]"
                                 placeholder={field.placeholder}
                               />
                             </div>
@@ -478,7 +478,7 @@ const JoinUs = () => {
                           value={formData.message}
                           onChange={handleInputChange}
                           rows="3"
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#FF9933] focus:border-[#FF9933]"
                           required
                         ></textarea>
                       </div>
@@ -488,7 +488,7 @@ const JoinUs = () => {
                           type="submit"
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
-                          className="w-full px-6 py-4 bg-gradient-to-r from-blue-900 to-blue-800 text-white font-bold rounded-lg hover:from-blue-700 hover:to-blue-600 transition-all shadow-md"
+                          className="w-full px-6 py-4 bg-gradient-to-r from-[#FF9933] to-[#FF6600] text-white font-bold rounded-lg hover:from-[#FF8800] hover:to-[#FF5500] transition-all shadow-md"
                         >
                           Submit Application
                         </motion.button>
@@ -507,7 +507,7 @@ const JoinUs = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-8 md:p-12 text-white overflow-hidden relative shadow-xl"
+          className="bg-gradient-to-r from-[#FF9933] to-[#FF6600] rounded-2xl p-8 md:p-12 text-white overflow-hidden relative shadow-xl"
         >
           {/* Animated dots background */}
           <div className="absolute inset-0 overflow-hidden opacity-10">
@@ -540,14 +540,14 @@ const JoinUs = () => {
               viewport={{ once: true }}
               className="text-3xl font-bold mb-4"
             >
-              Community Members Get <span className="text-amber-300">Exclusive</span> Benefits
+              Community Members Get <span className="text-white">Exclusive</span> Benefits
             </motion.h3>
             <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-lg text-blue-100 mb-8"
+              className="text-lg text-orange-100 mb-8"
             >
               Those who help discover hidden places receive special privileges across all programs, 
               including early access, higher commissions, and VIP event invitations.
@@ -560,7 +560,7 @@ const JoinUs = () => {
             >
               <button 
                 onClick={() => setOpenForm('community')}
-                className="px-8 py-4 bg-white text-blue-600 rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg transform hover:-translate-y-1"
+                className="px-8 py-4 bg-white text-[#FF6600] rounded-full font-bold hover:bg-gray-100 transition-all shadow-lg transform hover:-translate-y-1"
               >
                 Learn About Community Rewards
               </button>
