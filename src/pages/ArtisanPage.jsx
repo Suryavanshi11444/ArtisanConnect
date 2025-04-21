@@ -11,7 +11,7 @@ function ArtisanPage() {
       <ArtisanHero/>
       <ArtisanTopProducts/>
       <BuyerReviews/>
-      <Mainfeature/>
+     
     </div>
   )
 }

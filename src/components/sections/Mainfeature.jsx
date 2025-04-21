@@ -17,7 +17,7 @@ const Mainfeature = () => {
 
         {/* Text Content with Left Border */}
         <div className="ml-4 sm:ml-0 border-l-4 border-amber-500 pl-6 mt-20">
-          <h1 className="text-4xl font-extrabold text-blue-900 tracking-wide">
+          <h1 className="text-4xl font-extrabold text-blue-600 tracking-wide">
             Empowering Local Artisan Communities
           </h1>
           <h2 className="text-2xl font-bold text-amber-500 mb-6">
@@ -100,7 +100,7 @@ const ProjectCard = ({ title, subtitle, image, delay }) => {
         />
 
         {/* Hover overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-start p-6">
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-start p-6">
           <div className="transform -translate-y-10 group-hover:translate-y-0 transition-transform duration-500">
             <h3 className="text-xl font-bold text-white mb-1">{title}</h3>
             <p className="text-gray-200 text-sm">{subtitle}</p>
